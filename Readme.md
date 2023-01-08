@@ -1,4 +1,5 @@
 Description:
+    
     1. The first scene is a primary demo for the Break the Brick game. Only the background with the bricks and a paddle as the object moving from left to right and returning. This scene is made refering to https://eldred.fr/gb-asm-tutorial/part2/getting-started.html, with modifying the moving velocity and moving mode of the paddle.
 
     2. In second scene, kirby first blinks, then scrolls and fades out. The tiles and tilemap are converted from png using https://github.com/gingemonster/GameBoyPngConverter, and the code is refering to https://bitnenfer.com/blog/2017/01/21/GameBoy.html, with modifying SCY for the whole screen, VRAM storation and condition for fade and scroll animation. This scene also used VBlank Interrupt and lookup table.
