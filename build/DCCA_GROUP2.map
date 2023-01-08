@@ -1,0 +1,119 @@
+ROM0 bank #0:
+	SECTION: $0000 (0 bytes) ["sem"]
+	SECTION: $0000-$001f ($0020 bytes) ["Object tile data"]
+	         $0000 = ObjTiles
+	         $0020 = ObjTilesEnd
+	EMPTY: $0020-$003f ($0020 bytes)
+	SECTION: $0040-$0042 ($0003 bytes) ["Vblank"]
+	EMPTY: $0043-$00ff ($00bd bytes)
+	SECTION: $0100-$014c ($004d bytes) ["ROM Header"]
+	         $0100 = ROMHeader
+	EMPTY: $014d-$014f ($0003 bytes)
+	SECTION: $0150-$01c0 ($0071 bytes) ["Start"]
+	         $0150 = Start
+	         $0150 = demo1
+	         $0153 = demo2
+	         $017a = demo2.main_loop_kirby
+	         $0182 = demo3
+	SECTION: $01c1-$0657 ($0497 bytes) ["brick"]
+	         $01c1 = WaitVBlank
+	         $01c1 = brick
+	         $01f7 = ClearOam
+	         $021c = Main
+	         $0223 = WaitVBlank2
+	         $0242 = Left
+	         $0253 = Right
+	         $025d = Done
+	         $025e = Memcopy
+	         $0268 = BrickTiles
+	         $0408 = BrickTilesEnd
+	         $0408 = BrickTilemap
+	         $0648 = BrickTilemapEnd
+	         $0648 = Paddle
+	         $0658 = PaddleEnd
+	SECTION: $0658-$0946 ($02ef bytes) ["Lookup Tables 2"]
+	         $0658 = sine2
+	         $0758 = cosine2
+	         $0858 = sem
+	         $085c = sem.wait
+	         $0870 = CopyTiles
+	         $0882 = CopyObjTiles
+	         $0894 = CopyTilemap
+	         $08a4 = OAM_clear_loop
+	         $08b1 = SHADOW_OAM_clear_loop
+	         $08c9 = main_loop
+	         $092e = main_loop.end
+	         $092f = Shadow_OAM_Copy
+	         $0937 = Shadow_OAM_Copy.loop
+	SECTION: $0947-$0b86 ($0240 bytes) ["Tilemap"]
+	         $0947 = Tilemap
+	         $0b87 = TilemapEnd
+	SECTION: $0b87-$0d86 ($0200 bytes) ["Lookup Tables"]
+	         $0b87 = sine
+	         $0c87 = cosine
+	SECTION: $0d87-$0e87 ($0101 bytes) ["INTERRUPT"]
+	SECTION: $0e88-$0f47 ($00c0 bytes) ["Tile data"]
+	         $0e88 = Tiles
+	         $0f48 = TilesEnd
+	EMPTY: $0f48-$3fff ($30b8 bytes)
+	TOTAL EMPTY: $3198 bytes
+
+ROMX bank #1:
+	SECTION: $4000-$48d4 ($08d5 bytes) ["kirby"]
+	         $4000 = kirby_map_data
+	         $4168 = kirby_tile_data
+	         $46c8 = update_kirby.update_kirby_internal
+	         $46c8 = update_kirby
+	         $46eb = update_kirby.flicker_instr_vis
+	         $46f7 = update_kirby.flicker_instr_not_vis
+	         $4701 = update_kirby.flicker_instr_0
+	         $470f = update_kirby.flicker_instr_1
+	         $471b = update_kirby.start_fade_anim
+	         $4723 = update_kirby.loop
+	         $473b = update_kirby.loop_1
+	         $4744 = update_kirby.loop_0
+	         $4758 = update_kirby.fade
+	         $477a = update_kirby.fade_0
+	         $4781 = update_kirby.fade_1
+	         $4788 = update_kirby.fade_2
+	         $478f = update_kirby.fade_3
+	         $4796 = update_kirby.fade_4
+	         $479d = update_kirby.fade_5
+	         $47a4 = update_kirby.end_fade
+	         $47aa = update_kirby.reset_fade
+	         $47bc = update_kirby.end_0
+	         $47bd = load_kirby_data
+	         $47fc = load_kirby_data.load_kirby_tiles
+	SECTION: $48d5-$48f7 ($0023 bytes) ["lcd"]
+	         $48d5 = lcd_off
+	         $48db = lcd_on
+	         $48e1 = wait_vblank
+	         $48e8 = clear_bg_map
+	         $48eb = clear_bg_map.clear_loop
+	SECTION: $48f8-$4907 ($0010 bytes) ["memory"]
+	         $48f8 = memcpy
+	         $48f9 = memcpy.memcpy_loop
+	         $48fd = memcpy.memcpy_check_limit
+	EMPTY: $4908-$66ff ($1df8 bytes)
+	SECTION: $6700-$68ff ($0200 bytes) ["kirby_data"]
+	         $6700 = SINE_TABLE_0
+	EMPTY: $6900-$7fff ($1700 bytes)
+	TOTAL EMPTY: $34f8 bytes
+
+WRAM0 bank #0:
+	SECTION: $c000-$c006 ($0007 bytes) ["kirby_var"]
+	         $c000 = ADDR
+	         $c002 = FADE_STEP
+	         $c003 = START_FADE
+	         $c004 = FLICKER_PAL
+	         $c005 = FLICKER_TIMER
+	         $c006 = TIME
+	SECTION: $c007-$c007 ($0001 byte) ["Counter"]
+	         $c007 = wFrameCounter
+	EMPTY: $c008-$cfff ($0ff8 bytes)
+	TOTAL EMPTY: $0ff8 bytes
+
+SUMMARY:
+	ROM0: 3688 bytes used / 12696 free
+	ROMX: 2824 bytes used / 13560 free in 1 bank
+	WRAM0: 8 bytes used / 4088 free
