@@ -191,12 +191,6 @@ main_loop:
   ld hl, TIME
   inc [hl]
 
-  ld a,[hl]
-  cp a, 0
-  jp z, .end
-
-  halt
-
   jp main_loop
 
 
